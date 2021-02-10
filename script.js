@@ -47,7 +47,7 @@ const fetchingFromApi = (fetchingURL) => {
                 }
                 catch(err){
                     entryMode=0;
-                    console.log('in      '+err);
+                    console.log(err);
                 }
             }
             const verseTextIndopiak = verse.text_indopak;
