@@ -1,4 +1,3 @@
-document.getElementById('bodyTag').style.background='red';
 const fetchingFromApi = (fetchingURL) => {
     let entryMode = 1;
     fetch(fetchingURL)
@@ -28,18 +27,32 @@ const fetchingFromApi = (fetchingURL) => {
                     request.send(null);
                     console.log(request.status);
                     if (request.status === 200) {
-                      const chapterInformation = JSON.parse(request.response).chapter;
-                      const nameOfTheSurahInArabic = chapterInformation.name_arabic;
-                      const nameOfTheSurahInEnglishSimple = chapterInformation.name_simple;
-                      const nameOfThePlaceWhereSurahRevealed = chapterInformation.revelation_place;
-                      const revelationOrderOfTheSurah = chapterInformation.revelation_order;
-                      const verseCountOfTheSurah = chapterInformation.verses_count;
-                      const meaningOfTheSurahInEnglish = chapterInformation.translated_name.name;
-                      const surahInformation = nameOfTheSurahInArabic + '  :  ' +nameOfTheSurahInEnglishSimple + '  :  ' + meaningOfTheSurahInEnglish + '\n\n' + nameOfThePlaceWhereSurahRevealed + '  :  ' + revelationOrderOfTheSurah + '  :  ' + verseCountOfTheSurah;
-                      const informationOfTheSurah = document.createElement('p');
-                      informationOfTheSurah.className='suraInfoBriefing';
-                      informationOfTheSurah.innerText = surahInformation;
-                      alQuranDiv.appendChild(informationOfTheSurah);
+                        const chapterInformation = JSON.parse(request.response).chapter;
+                        const nameOfTheSurahInArabic = chapterInformation.name_arabic;
+                        const nameOfTheSurahInEnglishSimple = chapterInformation.name_simple;
+                        const nameOfThePlaceWhereSurahRevealed = chapterInformation.revelation_place;
+                        const revelationOrderOfTheSurah = chapterInformation.revelation_order;
+                        const verseCountOfTheSurah = chapterInformation.verses_count;
+                        const meaningOfTheSurahInEnglish = chapterInformation.translated_name.name;
+                        let surahInformation = nameOfTheSurahInArabic + '  :  ' +nameOfTheSurahInEnglishSimple + '  :  ' + meaningOfTheSurahInEnglish + '\n\n' + nameOfThePlaceWhereSurahRevealed + '  :  ' + revelationOrderOfTheSurah + '  :  ' + verseCountOfTheSurah;
+                        const informationOfTheSurah = document.createElement('p');
+                        if(label===1){
+                            
+                        }
+                        else{
+                            
+                        }
+                        informationOfTheSurah.className='suraInfoBriefing';
+                        informationOfTheSurah.innerText = surahInformation;
+                        alQuranDiv.appendChild(informationOfTheSurah);
+                        const bismillahirRahmanirRahimH2 = document.createElement('h2');
+                        bismillahirRahmanirRahimH2.innerText='بِسۡمِ اللهِ الرَّحۡمٰنِ الرَّحِيۡمِ';
+                        if(label!=1){
+                            informationOfTheSurah.style.marginTop='6em';
+                            alQuranDiv.appendChild(bismillahirRahmanirRahimH2);
+                            bismillahirRahmanirRahimH2.style.marginTop='2rem';
+                            bismillahirRahmanirRahimH2.style.fontWeight='600';
+                        }
                     }
                     else{
                         entryMode=0;
@@ -54,12 +67,10 @@ const fetchingFromApi = (fetchingURL) => {
             const verseData = `
                 <h4>${verseKey}</h4>
                 <h2>${verseTextIndopiak}</h2>
-                <br>
-                <br>
-                <br>
             `
             const eachVerseDiv = document.createElement('div');
             eachVerseDiv.innerHTML=verseData;
+            eachVerseDiv.className='eachVerse';
             alQuranDiv.appendChild(eachVerseDiv);
         });  
     })
@@ -77,5 +88,5 @@ const fetchingFromApi = (fetchingURL) => {
     } )
 }
 fetchingFromApi('https://api.quran.com/api/v4/quran/verses/indopak');
-document.getElementById('bodyTag').style.background='black';
-document.getElementById('bodyTag').style.color='white';
+document.getElementById('bodyTag').style.background='#2b2e4a';
+document.getElementById('bodyTag').style.color='#f5f5f5';

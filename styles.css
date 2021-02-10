@@ -3,5 +3,13 @@
 }
 
 .suraInfoBriefing{
-    font-size: 18px;
+    font-size: 20px;
+}
+
+.eachVerse{
+    background-color: #53354a;
+    border-radius: 20px;
+    padding: 1rem;
+    vertical-align: middle;
+    margin: 1rem;
 }
