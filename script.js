@@ -1,4 +1,4 @@
-document.getElementById('bodyTag').style.background='green';
+document.getElementById('bodyTag').style.background='blue';
 const fetchingFromApi = (fetchingURL) => {
     let entryMode = 1;
     fetch(fetchingURL)
