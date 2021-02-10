@@ -1,3 +1,4 @@
+document.getElementById('bodyTag').style.background='green';
 const fetchingFromApi = (fetchingURL) => {
     let entryMode = 1;
     fetch(fetchingURL)
@@ -75,5 +76,6 @@ const fetchingFromApi = (fetchingURL) => {
         }
     } )
 }
-
 fetchingFromApi('https://api.quran.com/api/v4/quran/verses/indopak');
+document.getElementById('bodyTag').style.background='black';
+document.getElementById('bodyTag').style.color='white';
